@@ -1,7 +1,12 @@
 /**
  * @type {import('next').NextConfig}
  */
+
+const isProd = process.env.NODE_ENV === 'production'
+
+
 const nextConfig = {
+  basePath: isProd ? '/demo-js-app' : '',
   output: 'export',
 
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
